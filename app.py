@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 # --- Load Environment Variables ---
 load_dotenv()
 
-API_URL = os.getenv("LANGFLOW_API_URL")
-API_TOKEN = os.getenv("LANGFLOW_API_TOKEN")
+api_token = os.getenv("LANGFLOW_API_TOKEN") or st.secrets.get("LANGFLOW_API_TOKEN")
+api_url = os.getenv("LANGFLOW_API_URL") or st.secrets.get("LANGFLOW_API_URL")
 
 # --- Page Configuration ---
 st.set_page_config(
